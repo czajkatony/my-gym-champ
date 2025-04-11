@@ -1,0 +1,19 @@
+// Export main styles
+@forward '../../styles.scss';
+
+// Export component styles
+@forward '../../app/app.component.scss';
+@forward '../../app/home/home.component.scss';
+
+// Export theme variables
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --text-color: #333;
+  --light-gray: #ecf0f1;
+  --dark-gray: #7f8c8d;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --background-color: #f9f9f9;
+} 

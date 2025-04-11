@@ -6,6 +6,8 @@ export const appRoutes: Route[] = [
     path: '',
     component: HomeComponent
   },
+  // These routes will be implemented later
+  /*
   {
     path: 'gyms',
     loadComponent: () => import('./gyms/gyms.component').then(m => m.GymsComponent)
@@ -26,6 +28,7 @@ export const appRoutes: Route[] = [
     path: 'signup',
     loadComponent: () => import('./auth/signup/signup.component').then(m => m.SignupComponent)
   },
+  */
   {
     path: '**',
     redirectTo: ''

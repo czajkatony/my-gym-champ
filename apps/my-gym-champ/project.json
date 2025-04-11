@@ -20,9 +20,20 @@
           {
             "glob": "**/*",
             "input": "apps/my-gym-champ/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/my-gym-champ/src/assets",
+            "output": "assets"
           }
         ],
-        "styles": ["apps/my-gym-champ/src/styles.scss"],
+        "styles": [
+          "apps/my-gym-champ/src/styles.scss",
+          "node_modules/primeicons/primeicons.css"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps/my-gym-champ/src/assets/styles"]
+        },
         "scripts": []
       },
       "configurations": {
