@@ -1,0 +1,62 @@
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>All-in-One Gym App for Small Gyms</h1>
+    <p>
+      The complete solution for gym membership management, 24/7 smart access, 
+      workout tracking, and community engagement.
+    </p>
+    <div class="hero-buttons">
+      <p-button label="Find a Gym" icon="pi pi-search" routerLink="/gyms"></p-button>
+      <p-button label="Owner Sign Up" icon="pi pi-user-plus" styleClass="p-button-outlined" routerLink="/signup"></p-button>
+    </div>
+  </div>
+</div>
+
+<section class="features-section">
+  <div class="section-header">
+    <h2>Why Choose My Gym Champ?</h2>
+    <p>Our platform gives gym owners and members everything they need in one place</p>
+  </div>
+  
+  <div class="feature-cards">
+    <p-carousel [value]="features" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="[
+      {
+        breakpoint: '1024px',
+        numVisible: 3,
+        numScroll: 1
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 2,
+        numScroll: 1
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1,
+        numScroll: 1
+      }
+    ]">
+      <ng-template let-feature pTemplate="item">
+        <div class="feature-item">
+          <p-card>
+            <ng-template pTemplate="header">
+              <div class="feature-icon">
+                <i [class]="feature.icon"></i>
+              </div>
+            </ng-template>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </p-card>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-content">
+    <h2>Ready to Transform Your Gym Experience?</h2>
+    <p>Join thousands of gym owners and members who are already using My Gym Champ.</p>
+    <p-button label="Get Started Today" icon="pi pi-check" size="large" routerLink="/signup"></p-button>
+  </div>
+</section> 

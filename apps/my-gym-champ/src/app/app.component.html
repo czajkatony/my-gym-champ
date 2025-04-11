@@ -1,2 +1,24 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<header class="app-header">
+  <div class="container">
+    <div class="logo">
+      <h1>🏋️‍♂️ My Gym Champ</h1>
+    </div>
+    <p-menubar [model]="items"></p-menubar>
+    <div class="user-menu">
+      <p-button label="Login" icon="pi pi-sign-in" styleClass="p-button-text" routerLink="/login"></p-button>
+      <p-button label="Sign Up" icon="pi pi-user-plus" routerLink="/signup"></p-button>
+    </div>
+  </div>
+</header>
+
+<main class="app-content">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer class="app-footer">
+  <div class="container">
+    <p>&copy; 2023 My Gym Champ - All-in-One Gym App for Small Gyms</p>
+  </div>
+</footer>

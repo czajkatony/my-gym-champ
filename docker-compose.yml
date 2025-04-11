@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Frontend Angular app
+  frontend:
+    build: 
+      context: .
+      dockerfile: ./apps/my-gym-champ/Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api:8080
+
+  # Backend Go API
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:postgrespassword@db:5432/my_gym_champ
+    volumes:
+      - ./apps/api:/app
+    restart: unless-stopped
+
+  # PostgreSQL database
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgrespassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=my_gym_champ
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data: 
